@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Lurkstagram",
+  "version": "1.0",
+  "description": "Hides the Like button and disables double-click on Instagram. Lurk in peace.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.instagram.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.instagram.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
